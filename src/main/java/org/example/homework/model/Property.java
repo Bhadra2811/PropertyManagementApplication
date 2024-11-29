@@ -2,6 +2,7 @@
 package org.example.homework.model;
 
 public class Property {
+
     private Integer id;
     private String address;
     private String city;
@@ -9,23 +10,62 @@ public class Property {
     private Double price;
     private Double areaInSqFt;
 
+    // Constructor with parameters
+    public Property(Integer id, String address, String city, String state, Double price, Double areaInSqFt) {
+        this.id = id;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.price = price;
+        this.areaInSqFt = areaInSqFt;
+    }
+
     // Getters and Setters
-    public Integer getId() { return id; }
-    public void setId(Integer id) { this.id = id; }
+    public Integer getId() {
+        return id;
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-    public String getCity() { return city; }
-    public void setCity(String city) { this.city = city; }
+    public String getAddress() {
+        return address;
+    }
 
-    public String getState() { return state; }
-    public void setState(String state) { this.state = state; }
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-    public Double getPrice() { return price; }
-    public void setPrice(Double price) { this.price = price; }
+    public String getCity() {
+        return city;
+    }
 
-    public Double getAreaInSqFt() { return areaInSqFt; }
-    public void setAreaInSqFt(Double areaInSqFt) { this.areaInSqFt = areaInSqFt; }
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Double getAreaInSqFt() {
+        return areaInSqFt;
+    }
+
+    public void setAreaInSqFt(Double areaInSqFt) {
+        this.areaInSqFt = areaInSqFt;
+    }
 }
-
