@@ -4,6 +4,7 @@ import org.example.homework.model.Property;
 import org.example.homework.model.PropertyNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,4 +62,17 @@ public class PropertyController {
         }
         throw new PropertyNotFoundException("Property not found with id: " + id);
     }
+    @PostMapping("/properties")
+    public ResponseEntity<Property> addProperty(@RequestBody Property newProperty) {
+        // Validate the new property
+        if (newProperty.getId() == null || newProperty.getAddress() == null || newProperty.getCity() == null || newProperty.getState() == null || newProperty.getPrice() <= 0 || newProperty.getAreaInSqFt() <= 0) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+
+        // Adding new property to the list
+        propertyList.add(newProperty);
+
+        return new ResponseEntity<>(newProperty, HttpStatus.CREATED);
+    }
+
 }
